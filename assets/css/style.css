@@ -1,52 +1,86 @@
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
 body {
-    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 34px;
     color: #777777;
-    display: flex;
-    flex-direction: column;
+    background-image: url(../images/houndstooth-pattern.png);
+    margin-top: 0px;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Georgia', 'Times', 'Times New Roman', serif;
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    clear: both;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 20px;
+}
+
+p:last-child {
+    margin-bottom: 0;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-weight: 700;
+    color: #4aaaa5;
+}
+
+h1 {
+    padding-bottom: 20px;
+    font-size: 30px;
+    line-height: 49px;
+    border-bottom: 3px solid #dddddd;
+}
+
+h2, h3 {
+    font-size: 22px;
 }
 
 #header {
+    position: fixed;
+    z-index: 99;
     width: 100%;
+    margin: 0 0 30px;
+    overflow: auto;
+    color: #ffffff;
     background-color: #ffffff;
     border-bottom: 2px solid #cccccc;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: baseline;
-    position: fixed;
-    z-index: 10;
 }
 
-#header-title {
+#logo {
+    float: left;
+    width: 250px;
+    height: 90px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 90px;
     color: #ffffff;
-    background-color: #4aaaa5;
     text-align: center;
-    padding: 25px;
-    margin-top: -2px;
-    margin-bottom: 0px;
+    text-decoration: none;
+    background: #4aaaa5;
 }
 
-#header a {
-    color: #ffffff;
-}
-
-#header-title:hover {
+#logo:hover {
     background-color: #59CCC6;
 }
 
-#header-title:active {
+#logo:active {
     background-color: #6FFFF7;
     position: relative;
     top: 2px;
+}
+
+nav {
+    float: right;
+    margin-top: 25px;
 }
 
 .nav-divide {
@@ -59,6 +93,15 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none;
     color: #b1aaab;
     font-size: 18px;
+    display: inline-block;
+    border-right: 1px solid #666666;
+    text-decoration: none;
+    padding-right: 20px;
+    margin-right: 20px;
+}
+
+nav a:first-child {
+    border-left: 0 none;
 }
 
 #nav a:hover {
@@ -74,23 +117,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #main-background {
-    background-image: url(../images/houndstooth-pattern.png);
-    margin-top: 90px;
-    flex: 1 0 auto;
+    padding-top: 130px;
+    min-height: calc(100vh - 70px);
 }
 
 #main-content {
-    width: 960px;
-    background-color: #ffffff;
-    margin: 0 auto;
-    border: 0.5px solid #dddddd;
+    float: left;
+    width: 100%;
+    max-width: 960px;
     padding: 30px;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-#main-content h1 {
-    color: #4aaaa5;
+    margin: 0 0 120px;
+    background: #ffffff;
+    border: 1px solid #dddddd;
 }
 
 #main-content p {
@@ -104,40 +142,31 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 6px 6px 30px #777777;
 }
 
-.divider {
-    border: 1px solid #dddddd;
-}
-
 footer {
-    background-color: #666666;
+    padding: 30px 0;
+    clear: both;
+    font-size: 12px;
+    color: #ffffff;
+    color: #cccccc;
+    text-align: center;
+    background: #666666;
     border-top: 8px solid #4aaaa5;
-    flex-shrink: 0;
+    height: 50px;
 }
 
-footer p {
-    margin-top: 30px;
-    margin-bottom: 10px;
-    display: table;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    color: #ffffff;
+h3, h2 {
+    padding-bottom: 20px;
+    margin-bottom: 15px;
+    line-height: 22px;
+    border-bottom: 2px solid #eeeeee;
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: stretch;
     justify-items: stretch;
-}
-
-.grid img {
-    border: 1px solid #dddddd;
-    border-radius: 4px;
-    padding: 5px;
-    width: 300px;
-    height: auto;
 }
 
 .img-container {
@@ -145,6 +174,14 @@ footer p {
     width: auto;
     overflow: hidden;
     position: relative;
+}
+
+.img-container #thumbnail {
+    border: 1px solid #dddddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 300px;
+    height: auto;
 }
 
 .img-container:hover {
@@ -199,4 +236,52 @@ input[type=submit]:active {
     background-color: #6FFFF7;
     position: relative;
     top: 2px;
+}
+
+@media (max-width: 980px) {
+    #main-content {
+        max-width: 70%;
+    } .gallery-item .thumbnail {
+        width: 95%;
+    }
+    .img-text {
+        width: 95%;
+        max-width: 285px;
+    }
+}
+
+@media (max-width: 768px) {
+    #main-content {
+        margin-right: 20px;
+        margin-left: 20px;
+        max-width: 90%;
+    }
+    .gallery-item .thumbnail {
+        width: 95%;
+        max-width: 285px;
+    }
+    .img-text {
+        width: 95%;
+        max-width: 285px;
+    }
+}
+
+@media (max-width: 640px) {
+    #main-content {
+        max-width: 90%;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .gallery-item .thumbnail {
+        width: 95%;
+    }
+    .img-text {
+        width: 95%;
+        max-width: 285px;
+    }
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }

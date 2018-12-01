@@ -4,47 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <title>Patrick Shea's Portfolio</title>
-    <link rel="stylesheet" type="text/css" href="../Basic-Portfolio/assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="../Responsive-Portfolio/assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <header id="header">
-        <h1 id="header-title">
-            <a href="index.html">Patrick Shea</a>
-        </h1>
-        <nav id="nav">
-            <a class="nav-divide" href="index.html">About</a>
-            <a class="nav-divide" href="portfolio.html">Portfolio</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+        <div class="container">
+            <a href="index.html" id="logo">Patrick Shea</a>
+            <nav id="nav">
+                <a href="index.html">About</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
     </header>
-    <div id="main-background">
+    <div id="main-background" class="container">
         <div id="main-content">
             <h1>Contact</h1>
-            <hr class="divider">
-            </hr>
-            <br>
+
             <form>
                 <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your name..">
+                <input type="text" id="name" name="name" placeholder="Your name.." required="required">
 
                 <label for="email">Email:</label>
-                <input type="text" id="email" name="email" placeholder="Your email..">
+                <input type="text" id="email" name="email" placeholder="Your email.." required="required">
 
                 <label for="phone">Phone:</label>
-                <input type="text" id="phone" name="phone" placeholder="Phone number..">
+                <input type="text" id="phone" name="phone" placeholder="Phone number.." required="required">
 
                 <label for="phone">Message:</label>
-                <textarea name="message" rows="10" cols="100%">Your message..</textarea>
-                <br>
-
+                <textarea name="message" rows="10" cols="100%" required="required">Your message..</textarea>
                 <input type="submit" value="Submit" onclick="alert('Your message has been submitted!')">
             </form>
         </div>
     </div>
 
     <footer>
-        <p>Copyright&copy;</p>
+        <div class="container">
+            Copyright&copy;
+        </div>
     </footer>
 </body>
 <html>
